@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw_data
+    schema: auto_raw_data
+    description: "Raw data tables loaded into DuckDB from CSV files"
+
+    tables:
+      - name: payment_data
+        description: "Raw payments data from CSV"
+
+      - name: primer_account
+        description: "Raw primer account data from CSV"
+
+      - name: payment_instrument_token_data
+        description: "Raw payment instrument token data from CSV"
+
+
+
+  - name: seeds
+    schema: seeds
+    description: >-
+                   Seed data loaded from CSV files.  **Data Cleaning:** The `metadata` field in `payment_request_data` 
+                     contained invalid JSON due to several issues: single quotes instead of double quotes, Python-style boolean 
+                     values (`True`/`False`), trailing commas, and trailing double quotes. These issues were addressed using the 
+                     following transformations before loading into the database:
+                     1. Replaced single quotes with double quotes.
+                     2. Replaced Python-style boolean values (`True`/`False`) with JSON boolean values (`true`/`false`).
+                     3. Removed trailing commas before closing braces in JSON objects.
+                     4. Removed trailing double quotes from values.
+                     These steps ensure that the `metadata` field is valid JSON and can be parsed correctly in downstream models.
+
+    tables:
+      - name: payment_request_data
+        description: "Raw payment request data from CSV"
+        identifier: "stg_payment_request"

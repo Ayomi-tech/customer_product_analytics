@@ -1,4 +1,3 @@
-
 {{ config(materialized='incremental', unique_key='customer_identifier') }}
 
 WITH staged_payments AS (

@@ -62,3 +62,4 @@ FROM final_customers
 WHERE customer_creation_date IS NOT NULL 
 AND customer_creation_date > COALESCE((SELECT MAX(customer_creation_date) FROM {{ this }}), '1900-01-01')
 {% endif %}
+

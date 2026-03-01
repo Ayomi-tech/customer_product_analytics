@@ -1,17 +1,18 @@
-# payment_customer_dbt_modelling
+# Customer & Product Analytics
 
-This dbt project transforms, models, and analyzes payment and customer data to generate insights. It utilizes DuckDB as the data warehouse.
+This repository serves as a centralized hub for data modeling across payment systems and product lifecycle management. It leverages modern data engineering stacks to transform raw data into actionable insights
 
-## Project Overview
+## Repository Overview
 
-This project follows a standard dbt workflow, progressing from raw CSV data to a curated data warehouse ready for analysis. The project structure is organized into seeds, staging, warehouse, and analysis folders, each serving a specific purpose.
+This repository is structured into two primary modeling projects, each utilizing a specialized tech stack tailored for its data source:
 
-## Data Sources
+1. **customer_payment_modeling:** This project focuses on the financial layer, transforming customer payment transactions into analytical models. 
+Core Tech: dbt (data build tool) & SQL.
+Focus: Modular SQL modeling, automated testing, and documentation of payment workflows.
 
-4 CVS files were loaded into the `seeds` folder for initial ingestion into DuckDB.
+2. **product_medallion_core:** This project implements a Medallion Architecture to process and refine product-related data at scale. 
+Core Tech: Databricks, Apache Spark (PySpark & Spark SQL), Delta Lake, and Unity Catalog.
+Focus: End-to-end data engineering pipelines, schema enforcement, and centralized data governance.
 
-## Data Loading and Transformation
-
-1.  **Seeds:** The CSV files were initially loaded into DuckDB using dbt seeds. However, the `payment_request_data.csv` file encountered issues during loading due to inconsistencies in the JSON format within the `metadata` column.
-
-2.  **Staging:** To address the JSON format issues in `payment_request_data.csv`, transformations were performed in the `staging` folder. This involved cleaning and standardizing the JSON data within the `metadata` column, enabling successful loading into DuckDB.  Additionally, minor transformations were applied to other columns as needed.  This staging layer prepares the data for integration into the data warehouse.
+**Getting Started**
+Each project contains its own detailed README.md with specific setup instructions, environment requirements, and execution steps. Please navigate to the respective directory to learn more.

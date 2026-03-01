@@ -14,5 +14,4 @@ Focus: Modular SQL modeling, automated testing, and documentation of payment wor
 Core Tech: Databricks, Apache Spark (PySpark & Spark SQL), Delta Lake, and Unity Catalog.
 Focus: End-to-end data engineering pipelines, schema enforcement, and centralized data governance.
 
-**Getting Started**
-Each project contains its own detailed README.md with specific setup instructions, environment requirements, and execution steps. Please navigate to the respective directory to learn more.
+**Getting Started:** Each project contains its own detailed README.md with specific setup instructions, environment requirements, and execution steps. Please navigate to the respective directory to learn more.
